@@ -6,15 +6,6 @@ import './Formulario.css'
 
 const Formulario = (props) => {
 
-    // const times = [
-    //     'programação',
-    //     'Front-End',
-    //     'Data Science',
-    //     'Devops',
-    //     'Ux e Design',
-    //     'Mobile',
-    //     'Inovação e Gestão'
-    //]
 
     const [nome, setNome] = useState('');
     const [cargo, setCargo] = useState('');

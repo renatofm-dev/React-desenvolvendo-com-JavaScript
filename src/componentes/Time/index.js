@@ -4,6 +4,7 @@ import './Time.css'
 const Time = (props) => {
     const estilosCSS = {backgroundColor:props.corSecundaria}
     return (
+        props.colaboradores.length > 0 && //renderização condicional
         <section className='time' style={estilosCSS}>
             <h3 style={{ borderColor: props.corPrimaria }}>{props.nome}</h3>
             <div className='colaboradores'>
@@ -13,8 +14,6 @@ const Time = (props) => {
                 imagem={colaborador.imagem}
                 />)}
             </div>
-
-
         </section>
 
     )

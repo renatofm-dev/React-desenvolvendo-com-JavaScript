@@ -8,10 +8,10 @@ interface CampoTextoProps {
         placeholder: string
         label: string
         valor: string
-        obrigatorio: boolean
+        obrigatorio?: boolean
 }
 
-const CampoTexto = ({ aoAlterado, label, obrigatorio, valor, placeholder } : CampoTextoProps) => {
+const CampoTexto = ({ aoAlterado, label, valor, placeholder, obrigatorio = false } : CampoTextoProps) => {
 
     // let valor = ''
     // const [valor, setValor] = useState('')

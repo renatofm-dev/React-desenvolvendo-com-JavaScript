@@ -3,8 +3,14 @@ import Botao from '../Botao'
 import CampoTexto from '../CampoTexto'
 import ListaSuspensa from '../ListaSuspensa'
 import './Formulario.css'
+import { IColaborador } from '../../compartilhado/interfaces/IColaborador'
 
-const Formulario = (props) => {
+interface FormularioProps {
+    aoColaboradorCadastrado: (colaborador: IColaborador) => void
+    times: string[]
+}
+
+const Formulario = (props: FormularioProps) => {
 
 
     const [nome, setNome] = useState('');
@@ -12,7 +18,7 @@ const Formulario = (props) => {
     const [imagem, setImagem] = useState('');
     const [time, setTime] = useState('');
 
-    const aoSalvar =  (event) => {
+    const aoSalvar =  (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         console.log('foi submetido =>', nome, cargo, imagem, time)
         props.aoColaboradorCadastrado({
@@ -57,8 +63,9 @@ const Formulario = (props) => {
                 
                 <ListaSuspensa 
                     obrigatorio={true} 
-                    label="Times" itens={props.times}
-                    valor = {props.times}
+                    label="Times" 
+                    itens={props.times}
+                    valor = {time}
                     aoAlterado = {valor => setTime(valor)}
                 />
 

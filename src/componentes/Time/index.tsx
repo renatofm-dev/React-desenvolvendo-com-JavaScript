@@ -1,6 +1,7 @@
 import { IColaborador } from '../../compartilhado/interfaces/IColaborador'
 import './Time.css'
 import Colaborador from '../Colaborador'
+import React from 'react'
 
 interface TimeProps {
     corPrimaria: string
@@ -12,7 +13,7 @@ interface TimeProps {
 const Time = (props: TimeProps) => {
     const estilosCSS = {backgroundColor:props.corSecundaria}
     return (
-        props.colaboradores.length > 0 && //renderização condicional
+        props.colaboradores.length > 0 ? //renderização condicional
         <section className='time' style={estilosCSS}>
             <h3 style={{ borderColor: props.corPrimaria }}>{props.nome}</h3>
             <div className='colaboradores'>
@@ -26,7 +27,7 @@ const Time = (props: TimeProps) => {
                 />)}
             </div>
         </section>
-
+        : <></>
     )
 
 }

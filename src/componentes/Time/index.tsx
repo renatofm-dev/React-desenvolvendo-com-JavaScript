@@ -1,7 +1,7 @@
 import { IColaborador } from '../../compartilhado/interfaces/IColaborador'
 import './Time.css'
 import Colaborador from '../Colaborador'
-import React from 'react'
+
 
 interface TimeProps {
     corPrimaria: string
@@ -24,6 +24,7 @@ const Time = (props: TimeProps) => {
                 nome={colaborador.nome} 
                 cargo={colaborador.cargo} 
                 imagem={colaborador.imagem}
+                data={colaborador.data}
                 />)}
             </div>
         </section>
